@@ -1,0 +1,16 @@
+<?php
+// copy this file to /config/autoload/authoauth.local.php
+return [
+    'service_manager' => [
+        'services' => [
+            'auth-oauth-config' => [
+                'google' => [
+                    'clientId'     => 'client.id.from.apps.googleusercontent.com',
+                    'clientSecret' => 'client.secret.apps.googleusercontent.com',
+                    'redirectUri'  => 'http://oauth.unlikelysource.org/oauth/google',
+                    'hostedDomain' => 'http://oauth.unlikelysource.org',
+                ],
+            ],
+        ],
+    ],
+];

@@ -27,7 +27,7 @@ return [
     ],
     'service_manager' => [
         'services' => [
-            // override this in /config/autoload/auth-oauth.local.php
+            // override this in /config/autoload/authoauth.local.php
             'auth-oauth-config' => [
                 'google' => [
                     'clientId'     => 'client.id.from.apps.googleusercontent.com',
