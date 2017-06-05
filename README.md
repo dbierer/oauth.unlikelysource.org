@@ -1,6 +1,5 @@
 # AuthOauth Module
 
-Author: dbierer@unlikelysource.com
 Last Rev: 5 Jun 2017
 
 Integrates Oauth2 clients from the PHP League into ZF2
