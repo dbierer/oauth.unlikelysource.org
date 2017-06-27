@@ -2,8 +2,8 @@
 namespace AuthOauth;
 
 use Zend\Mvc\MvcEvent;
+use AuthOauth\Generic\Hydrator;
 use AuthOauth\Adapter\GoogleAdapter;
-use Zend\Authentication\AuthenticationService;
 
 class Module
 {
@@ -27,12 +27,18 @@ class Module
     {
         return [
             'factories' => [
-                'auth-oauth-service' => function ($sm) {
-                    return new AuthenticationService();
+                'auth-oauth-hydrator' => 'AuthOauth\Factory\AdapterAbstractFactory',
+                'auth-oauth-provider-list' => function ($sm) {
+                    return array_combine(array_keys($sm->get('auth-oauth-config')),
+                                         array_keys($sm->get('auth-oauth-config')));
                 },
-                'auth-oauth-adapter-google' => function ($sm) {
-                    return new GoogleAdapter($sm->get('auth-oauth-config')['google']);
-                },
+            ],
+            // 2016-06-21 DB ***********************************************************************************
+            // use this as a fallback if you don't want to create 'auth-oauth-adapter-*' factories (as above)
+            // Need to have config == $sm->get('auth-oauth-config')[$provider]
+            // Also need to have a class AuthOauth\Adapter\{$provider}Adapter
+            'abstract_factories' => [
+                'auth-oauth-abstract-adapter-factory' => 'AuthOauth\Factory\AdapterAbstractFactory',
             ],
         ];
     }

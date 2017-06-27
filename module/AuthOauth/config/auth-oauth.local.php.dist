@@ -1,27 +1,6 @@
 <?php
+// copy this file to /config/autoload/authoauth.local.php
 return [
-    'router' => [
-        'routes' => [
-            'auth-oauth' => [
-                'type'    => 'Segment',
-                'options' => [
-                    'route'    => '/oauth[/:action]',
-                    'defaults' => [
-                        'controller' => 'auth-oauth-index-controller',
-                        'action'     => 'index',
-                    ],
-                ],
-            ],
-        ],
-    ],
-    'controllers' => [
-        'factories' => [
-            'auth-oauth-index-controller' => 'AuthOauth\Factory\IndexControllerFactory',
-        ],
-    ],
-    'view_manager' => [
-        'template_path_stack' => [__DIR__ . '/../view'],
-    ],
     'service_manager' => [
         'invokables' => [
             // invokable class which represents the user entity
@@ -33,7 +12,6 @@ return [
             'auth-oauth-service' => 'AuthOauth\Factory\AuthServiceFactory',
         ],
         'services' => [
-            // override this in /config/autoload/auth-oauth.local.php
             'auth-oauth-config' => [
                 'google' => [
                     'clientId'     => 'client.id.from.apps.googleusercontent.com',
@@ -41,6 +19,13 @@ return [
                     'redirectUri'  => 'http://oauth.unlikelysource.org/oauth/google',
                     'hostedDomain' => 'http://oauth.unlikelysource.org',
                 ],
+                // add additional provider config as you go
+                // need to require appropriate library to composer.json file
+                // e.g.
+                // 'twitter' => [ xxx ]
+                // in composer.json:: require{}
+                //  "league/oauth2-twitter": "^2.0"
+                // etc.
             ],
         ],
     ],

@@ -8,14 +8,13 @@
 namespace AuthOauth\Controller;
 
 use AuthOauth\Adapter\GoogleAdapter;
-use Zend\Authentication\AuthenticationService;
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
 
 class IndexController extends AbstractActionController
 {
+    use AuthServiceTrait;
     protected $authAdapterGoogle;
-    protected $authService;
     public function indexAction()
     {
         if ($this->authService->hasIdentity()) {
@@ -36,10 +35,6 @@ class IndexController extends AbstractActionController
         $viewModel = new ViewModel(['action' => 'Google', 'result' => $result]);
         $viewModel->setTemplate('auth-oauth/index/result');
         return $viewModel;
-    }
-    public function setAuthService(AuthenticationService $service)
-    {
-        $this->authService = $service;
     }
     public function setAuthAdapterGoogle(GoogleAdapter $adapter)
     {

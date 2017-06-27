@@ -49,7 +49,7 @@ cd /path/to/app/module/Auth/Oauth
 php /path/to/vendor/bin/classmap_generator.php
 ```
 
-* Add configuration for the new provider in AuthOauth/config/module.config.php or in /config/autoload/authoauth.local.php
+* Add configuration for the new provider in AuthOauth/config/module.config.php or in /config/autoload/auth-oauth.local.php
 ```
 'service_manager' => [
     'services' => [
