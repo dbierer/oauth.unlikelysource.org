@@ -1,10 +1,10 @@
 <?php
 namespace AuthOauth\Factory;
 
-use Zend\Authentication\AuthenticationService;
+use Laminas\Authentication\AuthenticationService;
 // needed for ZF3
 use Interop\Container\ContainerInterface;
-use Zend\ServiceManager\Factory\FactoryInterface;
+use Laminas\ServiceManager\Factory\FactoryInterface;
 
 class AuthServiceFactory implements FactoryInterface
 {

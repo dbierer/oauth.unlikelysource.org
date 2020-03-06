@@ -1,7 +1,7 @@
 <?php
 namespace AuthOauth;
 
-use Zend\Mvc\MvcEvent;
+use Laminas\Mvc\MvcEvent;
 use AuthOauth\Generic\Hydrator;
 use AuthOauth\Adapter\GoogleAdapter;
 
@@ -18,7 +18,7 @@ class Module
     public function getAutoloaderConfig()
     {
         return [
-            'Zend\Loader\StandardAutoloader' => [
+            'Laminas\Loader\StandardAutoloader' => [
                 'namespaces' => [__NAMESPACE__ => __DIR__ . '/src/' . __NAMESPACE__]
             ],
         ];

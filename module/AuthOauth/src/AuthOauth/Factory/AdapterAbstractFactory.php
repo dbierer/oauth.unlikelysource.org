@@ -5,10 +5,10 @@ namespace AuthOauth\Factory;
 use Exception;
 use Interop\Container\ContainerInterface;
 // ZF 2.4
-// use Zend\ServiceManager\AbstractFactoryInterface;
+// use Laminas\ServiceManager\AbstractFactoryInterface;
 // ZF 3
-use Zend\ServiceManager\Factory\AbstractFactoryInterface;
-use Zend\ServiceManager\ServiceLocatorInterface;
+use Laminas\ServiceManager\Factory\AbstractFactoryInterface;
+use Laminas\ServiceManager\ServiceLocatorInterface;
 
 class AdapterAbstractFactory implements AbstractFactoryInterface
 {

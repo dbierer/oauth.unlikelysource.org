@@ -1,5 +1,5 @@
 {
-    "name": "zendframework/skeleton-application",
+    "name": "laminas/skeleton-application",
     "description": "Skeleton Application for Zend Framework zend-mvc applications",
     "type": "project",
     "license": "BSD-3-Clause",
@@ -13,15 +13,15 @@
     "prefer-stable": true,
     "require": {
         "php": "^5.6 || ^7.0",
-        "zendframework/zend-component-installer": "^1.0 || ^0.7 || ^1.0.0-dev@dev",
-        "zendframework/zend-mvc": "^3.0.1",
-        "zfcampus/zf-development-mode": "^3.0",
+        "laminas/laminas-component-installer": "^1.0 || ^0.7 || ^1.0.0-dev@dev",
+        "laminas/laminas-mvc": "^3.0.1",
+        "laminas/laminas-development-mode": "^3.0",
         "league/oauth2-client": "^2.2",
         "league/oauth2-google": "^2.0",
-        "zendframework/zend-authentication": "^2.5",
-        "zendframework/zend-debug": "^2.5",
-        "zendframework/zend-session": "^2.7",
-        "zendframework/zend-hydrator": "^2.2"
+        "laminas/laminas-authentication": "^2.5",
+        "laminas/laminas-session": "^2.7",
+        "laminas/laminas-hydrator": "^2.2",
+        "laminas/laminas-dependency-plugin": "^1.0"
     },
     "autoload": {
         "psr-4": {
@@ -37,9 +37,9 @@
     "scripts": {
         "cs-check": "phpcs",
         "cs-fix": "phpcbf",
-        "development-disable": "zf-development-mode disable",
-        "development-enable": "zf-development-mode enable",
-        "development-status": "zf-development-mode status",
+        "development-disable": "laminas-development-mode disable",
+        "development-enable": "laminas-development-mode enable",
+        "development-status": "laminas-development-mode status",
         "post-create-project-cmd": [
             "@development-enable"
         ],

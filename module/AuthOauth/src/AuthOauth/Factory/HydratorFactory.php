@@ -5,7 +5,7 @@ use AuthOauth\Generic\Hydrator;
 
 // needed for ZF3
 use Interop\Container\ContainerInterface;
-use Zend\ServiceManager\Factory\FactoryInterface;
+use Laminas\ServiceManager\Factory\FactoryInterface;
 
 class HydratorFactory implements FactoryInterface
 {

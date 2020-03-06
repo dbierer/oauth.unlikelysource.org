@@ -20,9 +20,9 @@ Example given is using the Google provider
 <?php
 namespace AuthOauth\Adapter;
 
-use Zend\Authentication\Result;
-use Zend\Authentication\AuthenticationService;
-use Zend\Authentication\Adapter\AbstractAdapter;
+use Laminas\Authentication\Result;
+use Laminas\Authentication\AuthenticationService;
+use Laminas\Authentication\Adapter\AbstractAdapter;
 use League\OAuth2\Client\Provider\Google as GoogleProvider;
 
 class GoogleAdapter extends AbstractAdapter
@@ -30,7 +30,7 @@ class GoogleAdapter extends AbstractAdapter
     /**
      * Authenticate using logic provided by the PHP League Google Client docs
      *
-     * @param Zend\Authentication\AuthenticationService $service | NULL
+     * @param Laminas\Authentication\AuthenticationService $service | NULL
      * @return Result The authentication result
      * @throws RuntimeException
      */
